@@ -8,14 +8,6 @@ import { executeRestService } from './rest.service';
 
 export async function executeRest(request : FastifyRequest , reply : FastifyReply) {
     
-    // const { method, url, headers, body} = request.body as any;
-
-    // if(!method || !url){
-    //     reply.code(400);
-    //     return { error : "Method or URL is missing"};
-    // }
-
-
     const parsed = restExecuteSchema.safeParse(request.body);
 
     if(!parsed.success){
